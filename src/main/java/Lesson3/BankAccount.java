@@ -44,19 +44,19 @@ class Main {
         System.out.println("Баланс после снятия 200: " + account.getBalance());
 
         try {
-            account.withdraw(2000); // Это вызовет ошибку
+            account.withdraw(2000);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            account.deposit(-100); // Это вызовет ошибку
+            account.deposit(-100);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            account.withdraw(-50); // Это вызовет ошибку
+            account.withdraw(-50);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
