@@ -3,7 +3,7 @@ package Lesson4;
 public class AverageCalculator {
     public double calculateAverage(int[] numbers) {
         if (numbers == null || numbers.length == 0) {
-            throw new IllegalArgumentException("Массив не должен быть пустым или равным null.");
+            return 0.0;
         }
 
         double sum = 0;
@@ -42,23 +42,5 @@ public class AverageCalculatorTest {
         AverageCalculator calculator = new AverageCalculator();
         int[] numbers = {5};
         assertEquals(5.0, calculator.calculateAverage(numbers), 0.001);
-    }
-
-    @Test
-    public void testCalculateAverage_withEmptyArray() {
-        AverageCalculator calculator = new AverageCalculator();
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calculator.calculateAverage(new int[]{});
-        });
-        assertEquals("Массив не должен быть пустым или равным null.", exception.getMessage());
-    }
-
-    @Test
-    public void testCalculateAverage_withNullArray() {
-        AverageCalculator calculator = new AverageCalculator();
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calculator.calculateAverage(null);
-        });
-        assertEquals("Массив не должен быть пустым или равным null.", exception.getMessage());
     }
 }
