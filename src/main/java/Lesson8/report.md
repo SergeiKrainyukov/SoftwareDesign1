@@ -26,7 +26,7 @@ public class DateExample {
         try {
             LocalDateTime dateTime = LocalDateTime.parse(dateString, formatter);
 
-            // Применяем часовой пояс
+            // При необходимости можно применить часовой пояс
             // ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.of("America/New_York"));
             
             System.out.println("Date and Time: " + dateTime);
