@@ -32,8 +32,6 @@ public class DateExample {
             System.out.println("Date and Time: " + dateTime);
         } catch (DateTimeParseException e) {
             System.err.println("Invalid date format: " + e.getMessage());
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
