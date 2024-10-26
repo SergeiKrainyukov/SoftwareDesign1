@@ -1,6 +1,14 @@
 package Lesson5;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GradeCalculator {
 
@@ -23,23 +31,23 @@ public class GradeCalculator {
 
 class GradeCalculatorTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testEmptyList() {
         GradeCalculator calculator = new GradeCalculator();
-        calculator.calculateAverage(new ArrayList<>());
+        assertThrows(IllegalArgumentException.class, () -> calculator.calculateAverage(new ArrayList<>()));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     public void testNullList() {
         GradeCalculator calculator = new GradeCalculator();
-        calculator.calculateAverage(null);
+        assertThrows(IllegalArgumentException.class, () -> calculator.calculateAverage(null));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     public void testInvalidGrades() {
         GradeCalculator calculator = new GradeCalculator();
         List<Double> grades = Arrays.asList(90.0, -5.0, 105.0);
-        calculator.calculateAverage(grades);
+        assertThrows(IllegalArgumentException.class, () -> calculator.calculateAverage(grades));
     }
 
     @Test

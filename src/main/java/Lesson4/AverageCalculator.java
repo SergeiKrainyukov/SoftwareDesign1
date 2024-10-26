@@ -1,5 +1,9 @@
 package Lesson4;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class AverageCalculator {
     public double calculateAverage(int[] numbers) {
         if (numbers == null || numbers.length == 0) {
@@ -14,7 +18,7 @@ public class AverageCalculator {
     }
 }
 
-public class AverageCalculatorTest {
+class AverageCalculatorTest {
 
     @Test
     public void testCalculateAverage_withPositiveNumbers() {
