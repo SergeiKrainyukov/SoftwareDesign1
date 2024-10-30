@@ -40,6 +40,10 @@ class ShoppingCart {
         }
         return total;
     }
+    
+    public List<Product> getProducts(){
+        return products;
+    }
 }
 ```
 
@@ -99,6 +103,10 @@ public final class ShoppingCart {
         return products.stream()
                        .mapToDouble(Product::getPrice)
                        .sum();
+    }
+
+    public List<Product> getProducts(){
+        return products;
     }
 
     @Override
