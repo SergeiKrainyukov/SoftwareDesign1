@@ -8,23 +8,20 @@ public class QuickSort {
     // low >= 0
     // high >= low
     // high < array.length
-    
+
     // Постусловия:
     // Массив array отсортирован по возрастанию.
-    
     public static void quickSort(int[] array, int low, int high) {
-        if (array.length <= 1) return;
         if (low < high) {
             int pivotIndex = partition(array, low, high);
-            quickSort(array, low, pivotIndex - 1); 
+            quickSort(array, low, pivotIndex - 1);
             quickSort(array, pivotIndex + 1, high);
         }
     }
 
     private static int partition(int[] array, int low, int high) {
         int pivot = array[high];
-        int i = (low - 1);
-
+        int i = low - 1;
         for (int j = low; j < high; j++) {
             if (array[j] <= pivot) {
                 i++;
@@ -50,7 +47,9 @@ public class QuickSort {
 Для функции `quickSort(int[] array, int low, int high):`
 
 • P: Массив array является массивом целых чисел. 
-Индексы low и high являются допустимыми индексами массива array, и 0 <= low <= high < array.length.
+Индексы low и high являются допустимыми индексами массива array, и
+
+0 <= low <= high < array.length.
 
 ##### Постусловие (Postcondition)
 
