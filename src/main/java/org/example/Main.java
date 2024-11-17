@@ -7,14 +7,7 @@ class Animal {
 }
 
 class Cat extends Animal {
-//    @Override
-    public void makeSound(int numberOfSounds) {
-        for (int i = 0; i < numberOfSounds; i++) {
-            System.out.println("Meow");
-        }
-    }
 
-    @Override
     public void makeSound() {
         System.out.println("Meow");
     }
@@ -22,8 +15,7 @@ class Cat extends Animal {
 
 public class Main {
     public static void main(String[] args) {
-        Cat cat = new Cat();
+        Animal cat = new Cat();
         cat.makeSound();
-        cat.makeSound(3);
     }
 }
